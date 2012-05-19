@@ -1,0 +1,51 @@
+<h1>Clientes</h1>
+
+<table border =1>
+  <tr>
+    <th>Nome</th>
+    <th>Rg</th>
+    <th>Cpf</th>
+    <th>Telefone</th>
+    <th>Endereço</th>
+    <th>Cep</th>
+    <th>Dt nascto</th>
+    <th>Sexo</th>
+    <th>Foto</th>
+    <th>Email</th>
+    <th>Senha</th>
+    <th>Inativo</th>
+    <th colspan=4>Ações</th>
+  </tr>
+
+<% if @cliente then %>
+  <tr>
+    <td><%=h @cliente.nome %></td>
+    <td><%=h @cliente.rg %></td>
+    <td><%=h @cliente.cpf %></td>
+    <td><%=h @cliente.telefone %></td>
+    <td><%=h @cliente.endereco %></td>
+    <td><%=h @cliente.cep %></td>
+    <td><%=h @cliente.dt_nascto.strftime('%d/%m/%Y') %></td>
+    <td><%=h @cliente.sexo %></td>
+    <td><%=h @cliente.foto %></td>
+    <td><%=h @cliente.email %></td>
+    <td><%=h @cliente.senha %></td>
+    <td><%=h @cliente.ativo ? '' : 'SIM' %>
+    <td><%= link_to 'Ver', cliente_path(@cliente, :rg => params[:rg]) %></td>
+    <td><%= link_to 'Editar', edit_cliente_path(@cliente, :rg => params[:rg]) %></td>
+    <!--<td><%= link_to 'Excluir', @cliente, :confirm => 'Você tem certeza que deseja excluir o cliente ?', :method => :delete %></td>-->
+    <% if @cliente.ativo == true %>
+      <td><%= link_to 'Inativar', inativar_mod_cliente_path(@cliente, :rg => params[:rg]), :confirm => 'Você tem certeza que deseja inativar o cliente ?' %></td>
+    <% else %>
+      <td><%= link_to 'Ativar', ativar_mod_cliente_path(@cliente, :rg => params[:rg]) %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if !@cliente %>
+  <%= link_to 'Novo cliente', new_cliente_path %>
+<% end %>
+<%= link_to 'Voltar', clientes_path %>

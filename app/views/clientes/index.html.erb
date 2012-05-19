@@ -1,0 +1,11 @@
+<h1>Buscar clientes</h1>
+
+
+<p>Busque pelo número do RG do cliente para ver se já o mesmo já está cadastrado</p><br>
+<% form_tag( { :controller => "clientes", :action => "buscar" }, :method => "get" ) do %>
+  <%= label_tag(:rg, "RG: ") %>
+  <%= text_field_tag(:rg) %>
+  <%= submit_tag("Buscar") %>
+<% end %>
+
+<p> <%= link_to 'Voltar', root_path %> </p>

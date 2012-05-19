@@ -1,0 +1,15 @@
+<h1>New perfil</h1>
+
+<% form_for(@perfil) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descricao_perfil %><br />
+    <%= f.text_field :descricao_perfil %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', perfils_path %>

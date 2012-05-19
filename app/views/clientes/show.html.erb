@@ -1,0 +1,58 @@
+<p>
+  <b>Nome:</b>
+  <%=h @cliente.nome %>
+</p>
+
+<p>
+  <b>Rg:</b>
+  <%=h @cliente.rg %>
+</p>
+
+<p>
+  <b>Cpf:</b>
+  <%=h @cliente.cpf %>
+</p>
+
+<p>
+  <b>Telefone:</b>
+  <%=h @cliente.telefone %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%=h @cliente.endereco %>
+</p>
+
+<p>
+  <b>Cep:</b>
+  <%=h @cliente.cep %>
+</p>
+
+<p>
+  <b>Dt nascto aaa:</b>
+  <%=h @cliente.dt_nascto.strftime('%d/%m/%Y') %>
+</p>
+
+<p>
+  <b>Sexo:</b>
+  <%=h @cliente.sexo %>
+</p>
+
+<p>
+  <b>Foto:</b>
+  <%=h @cliente.foto %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @cliente.email %>
+</p>
+
+<p>
+  <b>Senha:</b>
+  <%=h @cliente.senha %>
+</p>
+
+
+<%= link_to 'Editar', edit_cliente_path(@cliente, :rg => params[:rg]) %> |
+<%= link_to 'Voltar', buscar_clientes_url(:rg => params[:rg]) %>

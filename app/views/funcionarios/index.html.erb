@@ -1,0 +1,46 @@
+<h1>Funcionários</h1>
+
+<table border = 1>
+  <tr>
+    <th>Nome</th>
+    <th>Rg</th>
+    <th>Cpf</th>
+    <th>Telefone</th>
+    <th>Endereco</th>
+    <th>Cep</th>
+    <th>Dt nascto</th>
+    <th>Sexo</th>
+    <th>Foto</th>
+    <th>Email</th>
+    <th>Usuario</th>
+    <th>Senha</th>
+    <th>Nivel</th>
+    <th colspan = 3>Ações</th>
+  </tr>
+
+<% @funcionarios.each do |funcionario| %>
+  <tr>
+    <td><%=h funcionario.nome %></td>
+    <td><%=h funcionario.rg %></td>
+    <td><%=h funcionario.cpf %></td>
+    <td><%=h funcionario.telefone %></td>
+    <td><%=h funcionario.endereco %></td>
+    <td><%=h funcionario.cep %></td>
+    <td><%=h funcionario.dt_nascto.strftime('%d/%m/%Y') %></td>
+    <td><%=h funcionario.sexo %></td>
+    <td><%=h funcionario.foto %></td>
+    <td><%=h funcionario.email %></td>
+    <td><%=h funcionario.usuario %></td>
+    <td><%=h funcionario.senha %></td>
+    <td><%=h funcionario.nivel %></td>
+    <td><%= link_to 'Ver', funcionario %></td>
+    <td><%= link_to 'Editar', edit_funcionario_path(funcionario) %></td>
+    <td><%= link_to 'Excluir', funcionario, :confirm => 'Você tem certeza que deseja excluir o funcionário?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo funcionário', new_funcionario_path %>
+<%= link_to 'Voltar', root_path %>

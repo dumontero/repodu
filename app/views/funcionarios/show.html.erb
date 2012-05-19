@@ -1,0 +1,68 @@
+<p>
+  <b>Nome:</b>
+  <%=h @funcionario.nome %>
+</p>
+
+<p>
+  <b>Rg:</b>
+  <%=h @funcionario.rg %>
+</p>
+
+<p>
+  <b>Cpf:</b>
+  <%=h @funcionario.cpf %>
+</p>
+
+<p>
+  <b>Telefone:</b>
+  <%=h @funcionario.telefone %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%=h @funcionario.endereco %>
+</p>
+
+<p>
+  <b>Cep:</b>
+  <%=h @funcionario.cep %>
+</p>
+
+<p>
+  <b>Dt nascto:</b>
+  <%=h @funcionario.dt_nascto.strftime('%d/%m/%Y') %>
+</p>
+
+<p>
+  <b>Sexo:</b>
+  <%=h @funcionario.sexo %>
+</p>
+
+<p>
+  <b>Foto:</b>
+  <%=h @funcionario.foto %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @funcionario.email %>
+</p>
+
+<p>
+  <b>Usuario:</b>
+  <%=h @funcionario.usuario %>
+</p>
+
+<p>
+  <b>Senha:</b>
+  <%=h @funcionario.senha %>
+</p>
+
+<p>
+  <b>Nivel:</b>
+  <%=h @funcionario.nivel %>
+</p>
+
+
+<%= link_to 'Edit', edit_funcionario_path(@funcionario) %> |
+<%= link_to 'Back', funcionarios_path %>
